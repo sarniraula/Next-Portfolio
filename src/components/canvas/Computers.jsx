@@ -1,34 +1,34 @@
-import React, { Suspense, useEffect, useState, } from "react";
+import React, { Suspense, useEffect, useState, useMemo} from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./lake/scene.gltf");
+  const computer = useMemo(() => useGLTF("./PC/scene.gltf"), []);
   const meshRef = React.useRef();
 
   useFrame((state, delta) => {
     // Rotate the model slowly around the z-axis
-    meshRef.current.rotation.y += delta * 0.1; // Adjust the speed as needed
+    meshRef.current.rotation.y += delta * 0.5; // Adjust the speed as needed
   });
 
   return (
     <mesh ref={meshRef}>
-      <hemisphereLight intensity={1} groundColor='black' />
-      <spotLight
+      <hemisphereLight intensity={3} groundColor='black' />
+      {/* <spotLight
         position={[0,0,-4]}
         angle={0}
         penumbra={1}
         intensity={1}
         castShadow
         shadow-mapSize={1024}
-      />
-      <pointLight position={[0,0,-4]} intensity={5} />
+      /> */}
+      <pointLight position={[0,0,0]} intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.7 : 0.3}
-        position={isMobile ? [0, -3, -2.2] : [0, 0, -4]}
+        scale={isMobile ? 0.7 : 0.2}
+        position={isMobile ? [0, -3, -2.2] : [0, -2.5, 0]}
         rotation={[0, 0, 0]}
       />
     </mesh>
