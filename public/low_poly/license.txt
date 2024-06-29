@@ -1,0 +1,11 @@
+Model Information:
+* title:	Missing camera
+* source:	https://sketchfab.com/3d-models/missing-camera-e172f7c7be4148968d8dcc2c7149280d
+* author:	nobgame (https://sketchfab.com/nobgame)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Missing camera" (https://sketchfab.com/3d-models/missing-camera-e172f7c7be4148968d8dcc2c7149280d) by nobgame (https://sketchfab.com/nobgame) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
