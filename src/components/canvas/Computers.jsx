@@ -8,10 +8,10 @@ const Computers = ({ isMobile }) => {
   const computer = useMemo(() => useGLTF("./PC/scene.gltf"), []);
   const meshRef = React.useRef();
 
-  useFrame((state, delta) => {
-    // Rotate the model slowly around the z-axis
-    meshRef.current.rotation.y += delta * 0.5; // Adjust the speed as needed
-  });
+  // useFrame((state, delta) => {
+  //   // Rotate the model slowly around the z-axis
+  //   meshRef.current.rotation.y += delta * 0.5; // Adjust the speed as needed
+  // });
 
   return (
     <mesh ref={meshRef}>
@@ -24,12 +24,12 @@ const Computers = ({ isMobile }) => {
         castShadow
         shadow-mapSize={1024}
       /> */}
-      <pointLight position={[0,0,0]} intensity={1} />
+      <pointLight position={[0, 0, 0]} intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.7 : 0.2}
-        position={isMobile ? [0, -3, -2.2] : [0, -2.5, 0]}
-        rotation={[0, 0, 0]}
+        scale={isMobile ? 0.09 : 0.2}
+        position={isMobile ? [0, -1, 0] : [0, -2.5, 0]}
+        rotation={[0, 95, 0]}
       />
     </mesh>
   );
